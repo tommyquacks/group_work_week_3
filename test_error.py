@@ -57,13 +57,3 @@ print(f"Max relative error: {np.max(rel_err_std):.6f}")
 print(f"Max absolute relative error: {np.max(np.abs(rel_err_std)):.6f}")
 print(f"Mean absolute relative error: {np.mean(np.abs(rel_err_std)):.6f}")
 
-# Optional: Plot relative errors (log x-axis for range, log y for errors)
-plt.figure(figsize=(10, 6))
-plt.semilogx(x_float32, rel_err_quake, 'b.', alpha=0.6, label='Quake III (float32)')
-plt.semilogx(x_float32, rel_err_std, 'r.', alpha=0.6, label='Standard (float32)')
-plt.xlabel('x (single-precision input)')
-plt.ylabel('Relative Error')
-plt.title('Relative Errors: Quake III vs. Standard Inverse Sqrt')
-plt.legend()
-plt.grid(True)
-plt.show()  # Or plt.savefig('errors.png') to save
